@@ -17,6 +17,32 @@ This project is a **Post Management** built with **Laravel 12** that provides a 
 * **Pagination**: Results are paginated for performance and simplicity.
 * **API Resources**: Responses are wrapped using Laravel Resources for clean output.
 - **Pagination**: Results are paginated for better performance and usability.
+---
+
+## About the Service-Repository Pattern
+
+This project adopts the **Service-Repository Pattern** to promote clean architecture and better separation of concerns.
+
+### How it Works:
+
+* **Repository Layer**
+  Responsible for interacting with the database. It abstracts the data access logic (e.g., queries, filters, pagination) away from the controller or service.
+
+* **Service Layer**
+  Contains the business logic of the application. It acts as a bridge between the controller and the repository, orchestrating how data is fetched, validated, transformed, or processed.
+
+* **Controller Layer**
+  Simply handles incoming HTTP requests and delegates processing to the service layer. It remains thin and clean, focusing only on request handling and response formatting.
+
+### Benefits:
+
+* **Better Code Organization** – Each layer has a single responsibility, making the codebase more modular and readable.
+* **Testability** – Business logic can be tested independently from controllers and database access.
+* **Reusability** – Services and repositories can be reused across multiple controllers or jobs.
+* **Maintainability** – Changes to logic (e.g., filters or validation) can be made without touching controllers.
+
+This structure makes it easier to scale, maintain, and understand the application over time.
+
 
 ### Technologies Used:
 - **Laravel 12**
